@@ -70,17 +70,96 @@ int main() {
     printf("\nDensidade Populacional: %2.2f hab/km²", densidade_populacional2);
     printf("\nPIB per Capita: %2.2f reais", pib_per_capita2);   
 
-    //compraração entre as cartas - mais populoso
+   //compraração entre as cartas -
 
-    printf("\n\n--Comparação Entre as Cartas--\n");
-   
-    printf("Carta 01 - %s: %d\n", estado01, populacao01);
-    printf("Carta 02 - %s: %d\n", estado02, populacao02);
-    if(populacao01 > populacao02){
-        printf("Carta 01 Venceu!!\n");
-    } else {
-        printf("Carta 02 Venceu!!\n");
-    }
+    printf("\n\n--COMPARAÇÃO ENTRE AS CARTAS--\n");
+    printf("\nEscolha qual atributo deseja comparar: \n");
+    printf("1 - População\n");
+    printf("2 - PIB\n");
+    printf("3 - Número de Pontos Turísticos\n");
+    printf("4 - Densidade Populacional\n");
+    printf("5 - PIB per Capita\n");
+    int opcao;
+    scanf("%d", &opcao);
 
-    return 0;
+
+    switch (opcao) {    
+    case 1: // População
+        printf("\nComparando População...\n");
+        if(populacao01 > populacao02) {
+            printf("\nCarta 01 Venceu!!\n");
+            printf("\nPopulação Carta 01: %d", populacao01);
+            printf("\nPopulação Carta 02: %d", populacao02);
+        } else if (populacao02 > populacao01) {
+            printf("\nCarta 02 Venceu!!\n");  
+            printf("\nPopulação Carta 02: %d", populacao02);
+            printf("\nPopulação Carta 01: %d", populacao01);
+        }else {
+            printf("\nEmpate!!\n");
+        }
+        break;
+    case 2: // PIB
+        printf("\nComparando PIB...\n");
+        if(pib01 > pib02) {
+            printf("\nCarta 01 Venceu!!\n");
+            printf("\nPIB Carta 01: %2.2f bilhoes de reais", pib01);
+            printf("\nPIB Carta 02: %2.2f bilhoes de reais", pib02);
+        } else if (pib02 > pib01) {
+            printf("\nCarta 02 Venceu!!\n");
+            printf("\nPIB Carta 02: %2.2f bilhoes de reais", pib02);
+            printf("\nPIB Carta 01: %2.2f bilhoes de reais", pib01);
+        }else {
+            printf("\nEmpate!!\n");
+        }
+        break;
+     case 3: // Número de Pontos Turísticos
+        printf("\nComparando Número de Pontos Turísticos...\n");
+        if(turista01 > turista02) {
+            printf("\nCarta 01 Venceu!!\n");
+            printf("\nPontos Turísticos Carta 01: %d", turista01);
+            printf("\nPontos Turísticos Carta 02: %d", turista02);
+        } else if (turista02 > turista01) {
+            printf("\nCarta 02 Venceu!!\n");
+            printf("\nPontos Turísticos Carta 02: %d", turista02);
+            printf("\nPontos Turísticos Carta 01: %d", turista01);
+        }else {
+            printf("\nEmpate!!\n");
+        }
+        break;  
+    case 4: // Densidade Populacional
+        printf("\nComparando Densidade Populacional...\n");
+        if(densidade_populacional1 < densidade_populacional2) {
+            printf("\nCarta 01 Venceu!!\n");
+            printf("\nDensidade Populacional Carta 01: %2.2f hab/km²", densidade_populacional1);
+            printf("\nDensidade Populacional Carta 02: %2.2f hab/km²", densidade_populacional2);
+        } else if (densidade_populacional2 < densidade_populacional1) {
+            printf("\nCarta 02 Venceu!!\n");
+            printf("\nDensidade Populacional Carta 02: %2.2f hab/km²", densidade_populacional2);
+            printf("\nDensidade Populacional Carta 01: %2.2f hab/km²", densidade_populacional1);
+        }else {
+            printf("\nEmpate!!\n");
+        }
+        break;
+    case 5: // PIB per Capita
+        printf("\nComparando PIB per Capita...\n");
+        if(pib_per_capita1 > pib_per_capita2) {
+            printf("\nCarta 01 Venceu!!\n");
+            printf("\nPIB per Capita Carta 01: %2.2f reais", pib_per_capita1);
+            printf("\nPIB per Capita Carta 02: %2.2f reais", pib_per_capita2);
+        } else if (pib_per_capita2 > pib_per_capita1) {
+            printf("\nCarta 02 Venceu!!\n");
+            printf("\nPIB per Capita Carta 02: %2.2f reais", pib_per_capita2);
+            printf("\nPIB per Capita Carta 01: %2.2f reais", pib_per_capita1);
+        }else {
+            printf("\nEmpate!!\n");
+        }
+        break;
+    default: // Caso inválido
+        printf("\nOpção inválida! Por favor, escolha uma opção válida.\n");
+        break;
+    }   
+    printf("\n\n==FIM==\n");
+    return 0;   
 }
+    
+
